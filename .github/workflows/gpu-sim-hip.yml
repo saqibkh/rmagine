@@ -58,9 +58,10 @@ jobs:
           cuda-toolkit: none
           rocm: "7.1"
 
-      # The action installs only the compiler side; hipRAND is needed on top.
-      - name: Install hipRAND
-        run: sudo apt-get install -y hiprand-dev rocrand-dev
+      # The action installs only the compiler side; hipRAND and the comgr CMake
+      # config (needed by find_package(hip)) come on top.
+      - name: Install hipRAND and comgr
+        run: sudo apt-get install -y comgr hiprand-dev rocrand-dev rocm-cmake
 
       - name: Configure
         run: |
