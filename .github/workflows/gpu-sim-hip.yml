@@ -8,6 +8,8 @@ name: GPU Simulator (HIP)
 # does not replace it.
 
 on:
+  push:
+    branches: [ hip-sim-verify ]
   workflow_dispatch:
   pull_request:
     branches: [ main ]
